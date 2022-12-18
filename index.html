@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table, td, th {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+            padding: 15PX;
+        }
+        table {
+            width: 50%;
+        }
+        tr:nth-child(even) {
+  background-color: rgba(121, 235, 111, 0.4);
+}
+
+th:nth-child(even),td:nth-child(even) {
+  background-color: rgba(96, 243, 108, 0.4);
+}
+#div1, #div2, #div3 {
+  float: left;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;}
+
+
+    </style>
+    <script>
+        function allowDrop(ev) {
+          ev.preventDefault();
+        }
+        
+        function drag(ev) {
+          ev.dataTransfer.setData("text", ev.target.id);
+        }
+        
+        function drop(ev) {
+          ev.preventDefault();
+          var data = ev.dataTransfer.getData("text");
+          ev.target.appendChild(document.getElementById(data));
+        }
+        </script>
+</head>
+<body>
+
+
+
+
+                                      <!--CODE FOR OVERLAPPING TABLE-->
+
+
+
+
+    <ul><h2>Table</h2></ul>
+  <table style="height: 100px; ">
+
+        <tr>
+            <th colspan="2">A B C</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            
+        
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+    
+        </tr>
+    </table>
+    <ul>
+        <li>This table was made for practice purpose.</li>
+        <li>Some things need to be improved.</li>       
+    </ul>
+
+
+
+
+                                   <!--CODE FOR DRAGABLE IMAGES OR TEXT-->
+
+
+ 
+
+    <ul>
+        <h3>Dragable Images</h3>
+         <li>The images given below are Dragable</li>
+    </ul>
+      <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img id="drag1" src="img/onepeace.jpg" draggable="true" ondragstart="drag(event)" width="100" height="100">
+     </div>
+
+      <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+      <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <img id="drag2" src="img/s.jpg" draggable="true" ondragstart="drag(event)" width="100" height="100">  
+      </div>
+
+
+
+
+        
+    
+</body>
+</html>
